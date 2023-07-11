@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  set-cookie-test-server:
+    container_name: set-cookie-test-server
+    image: node:18-alpine
+    working_dir: /app
+    volumes:
+      - ./:/app
+    ports:
+      - 8080:8080
+    command:
+      - sh
+      - -c
+      - |
+        npm i
+        npm run dev
